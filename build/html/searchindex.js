@@ -1,0 +1,1 @@
+Search.setIndex({docnames:["index"],envversion:53,filenames:["index.rst"],objects:{},objnames:{},objtypes:{},terms:{index:0,modul:0,page:0,search:0},titles:["Welcome to Liren Liu's Notebook's documentation!"],titleterms:{"public":0,about:0,code:0,document:0,indic:0,liren:0,liu:0,notebook:0,script:0,tabl:0,tutori:0,welcom:0}})
