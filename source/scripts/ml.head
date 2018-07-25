@@ -1,0 +1,13 @@
+Machine Learning tools
+====
+
+Useful tools on web for free
+-------------------
+- `AENET  <http://ann.atomistic.net/Documentation/>`_
+- `AMP <http://amp.readthedocs.io/en/latest/>`_
+
+Scripts
+-------
+.. toctree::
+   maxdepth: 2
+

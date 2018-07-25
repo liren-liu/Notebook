@@ -1,0 +1,296 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>calculate thermodymamics &mdash; Liren Liu&#39;s Notebook 1.0 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Idpp method for creating initial NEB path" href="python_idpp_neb.html" />
+    <link rel="prev" title="plot Band Structure" href="bash_python_plot_band.html" /> 
+
+  
+  <script src="../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> Liren Liu's Notebook
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../me.html"><strong>Pai Li (李湃)</strong></a></li>
+</ul>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../vasp.html">Vasp</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../vasp.html#useful-tools-on-web">Useful tools on web</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../vasp.html#scripts">Scripts</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="bash_cif2pos.html">cif2pos.sh</a></li>
+<li class="toctree-l3"><a class="reference internal" href="bash_converge.html">converg.sh</a></li>
+<li class="toctree-l3"><a class="reference internal" href="bash_fix_atom.html">fix_atom.sh</a></li>
+<li class="toctree-l3"><a class="reference internal" href="bash_get_vibration.html">get_vibration.sh</a></li>
+<li class="toctree-l3"><a class="reference internal" href="bash_plot_structure.html">plot_structure.sh</a></li>
+<li class="toctree-l3"><a class="reference internal" href="bash_plotdist.html">plotdist.sh</a></li>
+<li class="toctree-l3"><a class="reference internal" href="bash_python_plot_band.html">plot Band Structure</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">calculate thermodymamics</a></li>
+<li class="toctree-l3"><a class="reference internal" href="python_idpp_neb.html">Idpp method for creating initial NEB path</a></li>
+<li class="toctree-l3"><a class="reference internal" href="python_plot_dos_band.html">plot DOS &amp; Band Structure</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../super.html">Scripts for job management system on super-computer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../kmc.html">kMC simulation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ml.html">Machine Learning tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../python.html">Python Scripts</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../tutorials/latex.html">Math notation in Latex</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../tutorials/vim.html">Vim skills</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../tutorials/Restructured_Text.html">A ReStructuredText Primer</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">Liren Liu's Notebook</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../vasp.html">Vasp</a> &raquo;</li>
+        
+      <li>calculate thermodymamics</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../../_sources/scripts/vasp_scripts/python_calculate_freq.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="calculate-thermodymamics">
+<h1>calculate thermodymamics<a class="headerlink" href="#calculate-thermodymamics" title="Permalink to this headline">¶</a></h1>
+<p>This python script calculate ZPE/TS/H using frequency info in OUTCAR</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">monty.re</span> <span class="k">import</span> <span class="n">regrep</span>
+
+<span class="k">def</span> <span class="nf">get_frequency</span><span class="p">(</span><span class="n">outcar</span><span class="p">):</span>
+    <span class="n">pattern</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;frequency&quot;</span><span class="p">:</span> <span class="s2">&quot;^\s+[\d]+\s+f+\s+=\s+([\d\-\.]+)\sTHz+\s+([\d\-\.]+)\s2PiTHz+\s+([\d\-\.]+)\s+cm-1+\s+([\d\-\.]+)+\smeV&quot;</span><span class="p">}</span>
+    <span class="n">d</span> <span class="o">=</span> <span class="n">regrep</span><span class="p">(</span><span class="n">outcar</span><span class="p">,</span> <span class="n">pattern</span><span class="p">)</span>
+    <span class="c1"># float string and rename index</span>
+    <span class="n">data</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">index</span><span class="p">,</span> <span class="n">d</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">d</span><span class="p">[</span><span class="s1">&#39;frequency&#39;</span><span class="p">]):</span>
+        <span class="n">d</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="nb">float</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">d</span><span class="p">[</span><span class="mi">0</span><span class="p">]]</span>
+        <span class="n">d</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;</span><span class="si">{}</span><span class="s1"> f&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">index</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span>
+        <span class="n">data</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">d</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">data</span>
+
+
+
+<span class="n">dd</span> <span class="o">=</span> <span class="n">get_frequency</span><span class="p">(</span><span class="s1">&#39;OUTCAR&#39;</span><span class="p">)</span>
+<span class="n">meV_data</span> <span class="o">=</span> <span class="p">[</span><span class="n">d</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="k">for</span> <span class="n">d</span><span class="p">,</span> <span class="n">index</span> <span class="ow">in</span> <span class="n">dd</span><span class="p">]</span>
+<span class="n">l</span><span class="o">=</span><span class="nb">len</span><span class="p">(</span><span class="n">meV_data</span><span class="p">)</span>
+<span class="n">Kb</span> <span class="o">=</span> <span class="mf">8.6173324E-2</span>  <span class="c1">#Boltzmann constant unit is meV/K</span>
+<span class="n">T</span>  <span class="o">=</span> <span class="mi">298</span>       <span class="c1">#Absolute temperature unit is K</span>
+<span class="n">R</span>  <span class="o">=</span> <span class="mf">8.3144598</span>     <span class="c1">#Gas constant unit is J/(k.mol)</span>
+<span class="n">Tran</span> <span class="o">=</span> <span class="mf">1.0364E-5</span>   <span class="c1">#J/mol unit to eV</span>
+
+
+<span class="n">D</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="n">S</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="n">C</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">xrange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">l</span><span class="p">):</span>
+    <span class="n">d</span> <span class="o">=</span><span class="n">meV_data</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">/</span><span class="p">(</span><span class="n">Kb</span><span class="o">*</span><span class="n">T</span><span class="p">)</span>
+    <span class="n">D</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">d</span><span class="p">)</span>
+    <span class="n">s</span> <span class="o">=</span> <span class="p">(</span><span class="n">d</span><span class="o">/</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="n">d</span><span class="p">)</span><span class="o">-</span><span class="mi">1</span><span class="p">))</span><span class="o">-</span><span class="n">np</span><span class="o">.</span><span class="n">log1p</span><span class="p">(</span><span class="o">-</span><span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">d</span><span class="p">))</span>
+    <span class="n">S</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
+    <span class="n">c</span> <span class="o">=</span> <span class="n">meV_data</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">/</span><span class="p">(</span><span class="n">Kb</span><span class="o">*</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="n">d</span><span class="p">)</span><span class="o">-</span><span class="mi">1</span><span class="p">))</span>
+    <span class="n">C</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">c</span><span class="p">)</span>
+<span class="n">entropy</span><span class="o">=</span> <span class="nb">sum</span><span class="p">(</span><span class="n">S</span><span class="p">)</span>
+<span class="n">TS</span><span class="o">=</span> <span class="n">R</span><span class="o">*</span><span class="n">T</span><span class="o">*</span><span class="n">entropy</span><span class="o">*</span><span class="n">Tran</span>
+<span class="n">ZPE</span><span class="o">=</span> <span class="mf">0.5</span><span class="o">*</span><span class="nb">sum</span><span class="p">(</span><span class="n">meV_data</span><span class="p">)</span><span class="o">*</span><span class="mf">1E-3</span>
+<span class="n">U</span> <span class="o">=</span> <span class="n">R</span><span class="o">*</span><span class="n">Tran</span><span class="o">*</span><span class="nb">sum</span><span class="p">(</span><span class="n">C</span><span class="p">)</span>
+<span class="nb">print</span> <span class="s2">&quot;ZPE =&quot;</span><span class="p">,</span> <span class="n">ZPE</span><span class="p">,</span> <span class="s2">&quot;eV&quot;</span>
+<span class="nb">print</span> <span class="s2">&quot;TS =&quot;</span><span class="p">,</span> <span class="n">TS</span><span class="p">,</span> <span class="s2">&quot;eV&quot;</span>
+<span class="nb">print</span>  <span class="s2">&quot;U =&quot;</span><span class="p">,</span> <span class="n">U</span><span class="p">,</span> <span class="s2">&quot;eV&quot;</span>
+</pre></div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="python_idpp_neb.html" class="btn btn-neutral float-right" title="Idpp method for creating initial NEB path" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="bash_python_plot_band.html" class="btn btn-neutral" title="plot Band Structure" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2018, Liren Liu.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../',
+            VERSION:'1.0',
+            LANGUAGE:'en',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../_static/doctools.js"></script>
+      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

@@ -1,0 +1,379 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Idpp method for creating initial NEB path &mdash; Liren Liu&#39;s Notebook 1.0 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="plot DOS &amp; Band Structure" href="python_plot_dos_band.html" />
+    <link rel="prev" title="calculate thermodymamics" href="python_calculate_freq.html" /> 
+
+  
+  <script src="../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> Liren Liu's Notebook
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../me.html"><strong>Pai Li (李湃)</strong></a></li>
+</ul>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../vasp.html">Vasp</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../vasp.html#useful-tools-on-web">Useful tools on web</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../vasp.html#scripts">Scripts</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="bash_cif2pos.html">cif2pos.sh</a></li>
+<li class="toctree-l3"><a class="reference internal" href="bash_converge.html">converg.sh</a></li>
+<li class="toctree-l3"><a class="reference internal" href="bash_fix_atom.html">fix_atom.sh</a></li>
+<li class="toctree-l3"><a class="reference internal" href="bash_get_vibration.html">get_vibration.sh</a></li>
+<li class="toctree-l3"><a class="reference internal" href="bash_plot_structure.html">plot_structure.sh</a></li>
+<li class="toctree-l3"><a class="reference internal" href="bash_plotdist.html">plotdist.sh</a></li>
+<li class="toctree-l3"><a class="reference internal" href="bash_python_plot_band.html">plot Band Structure</a></li>
+<li class="toctree-l3"><a class="reference internal" href="python_calculate_freq.html">calculate thermodymamics</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Idpp method for creating initial NEB path</a></li>
+<li class="toctree-l3"><a class="reference internal" href="python_plot_dos_band.html">plot DOS &amp; Band Structure</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../super.html">Scripts for job management system on super-computer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../kmc.html">kMC simulation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ml.html">Machine Learning tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../python.html">Python Scripts</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../tutorials/latex.html">Math notation in Latex</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../tutorials/vim.html">Vim skills</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../tutorials/Restructured_Text.html">A ReStructuredText Primer</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">Liren Liu's Notebook</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../vasp.html">Vasp</a> &raquo;</li>
+        
+      <li>Idpp method for creating initial NEB path</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../../_sources/scripts/vasp_scripts/python_idpp_neb.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="idpp-method-for-creating-initial-neb-path">
+<h1>Idpp method for creating initial NEB path<a class="headerlink" href="#idpp-method-for-creating-initial-neb-path" title="Permalink to this headline">¶</a></h1>
+<p>IDPP method is introduced by Hannes Jónsson in his paper “Improved initial guess for minimum energy path calculations”</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/usr/bin/python</span>
+<span class="c1">#lipai@mail.ustc.edu.cn</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">os</span>
+<span class="kn">import</span> <span class="nn">time</span>
+<span class="n">step_init</span><span class="o">=</span><span class="mf">0.0001</span>
+<span class="n">images</span><span class="o">=</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;input num of images: &quot;</span><span class="p">)</span>
+<span class="n">ininame</span><span class="o">=</span><span class="n">raw_input</span><span class="p">(</span><span class="s2">&quot;ini structure: &quot;</span><span class="p">)</span>
+<span class="n">finname</span><span class="o">=</span><span class="n">raw_input</span><span class="p">(</span><span class="s2">&quot;fin structure: &quot;</span><span class="p">)</span>
+
+<span class="c1">#read ini structure</span>
+<span class="n">fileopen</span><span class="o">=</span><span class="nb">open</span><span class="p">(</span><span class="n">ininame</span><span class="p">,</span><span class="s1">&#39;r&#39;</span><span class="p">)</span>
+<span class="n">ini_data</span><span class="o">=</span><span class="n">fileopen</span><span class="o">.</span><span class="n">readlines</span><span class="p">()</span>
+
+<span class="n">head</span><span class="o">=</span><span class="n">ini_data</span><span class="p">[:</span><span class="mi">9</span><span class="p">]</span>
+<span class="n">atom_num</span><span class="o">=</span><span class="nb">sum</span><span class="p">(</span><span class="nb">map</span><span class="p">(</span><span class="nb">int</span><span class="p">,</span><span class="n">head</span><span class="p">[</span><span class="mi">6</span><span class="p">]</span><span class="o">.</span><span class="n">split</span><span class="p">()))</span>
+
+<span class="n">ini_data</span><span class="o">=</span><span class="n">ini_data</span><span class="p">[</span><span class="mi">9</span><span class="p">:</span><span class="mi">9</span><span class="o">+</span><span class="n">atom_num</span><span class="p">]</span>
+<span class="n">tmp</span><span class="o">=</span><span class="p">[]</span>
+<span class="n">fix</span><span class="o">=</span><span class="p">[]</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">atom_num</span><span class="p">):</span>
+    <span class="n">tmp</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="nb">map</span><span class="p">(</span><span class="nb">float</span><span class="p">,</span><span class="n">ini_data</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">split</span><span class="p">()[</span><span class="mi">0</span><span class="p">:</span><span class="mi">3</span><span class="p">]))</span>
+    <span class="k">if</span><span class="p">(</span><span class="n">ini_data</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">split</span><span class="p">()[</span><span class="mi">4</span><span class="p">]</span><span class="o">==</span><span class="s1">&#39;F&#39;</span><span class="p">):</span> <span class="n">fix</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span> <span class="n">fix</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">pos_a</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">tmp</span><span class="p">)</span>
+
+<span class="c1">#read fin stucture</span>
+<span class="n">fileopen</span><span class="o">=</span><span class="nb">open</span><span class="p">(</span><span class="n">finname</span><span class="p">,</span><span class="s1">&#39;r&#39;</span><span class="p">)</span>
+<span class="n">fin_data</span><span class="o">=</span><span class="n">fileopen</span><span class="o">.</span><span class="n">readlines</span><span class="p">()</span>
+<span class="n">fin_data</span><span class="o">=</span><span class="n">fin_data</span><span class="p">[</span><span class="mi">9</span><span class="p">:</span><span class="mi">9</span><span class="o">+</span><span class="n">atom_num</span><span class="p">]</span>
+<span class="n">tmp</span><span class="o">=</span><span class="p">[]</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">fin_data</span><span class="p">:</span>
+    <span class="n">tmp</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="nb">map</span><span class="p">(</span><span class="nb">float</span><span class="p">,</span><span class="n">i</span><span class="o">.</span><span class="n">split</span><span class="p">()[</span><span class="mi">0</span><span class="p">:</span><span class="mi">3</span><span class="p">]))</span>
+<span class="n">pos_b</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">tmp</span><span class="p">)</span>
+
+<span class="c1">#correction of periodic boundary condition</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">atom_num</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">3</span><span class="p">):</span>
+            <span class="k">if</span><span class="p">(</span><span class="n">pos_a</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span><span class="o">-</span><span class="n">pos_b</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span><span class="o">&gt;</span><span class="mf">0.5</span><span class="p">):</span> <span class="n">pos_a</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span><span class="o">-=</span><span class="mi">1</span>
+            <span class="k">if</span><span class="p">(</span><span class="n">pos_a</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span><span class="o">-</span><span class="n">pos_b</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span><span class="o">&lt;-</span><span class="mf">0.5</span><span class="p">):</span> <span class="n">pos_b</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span><span class="o">-=</span><span class="mi">1</span>
+
+<span class="c1">#get dist matrix and linear interpolation</span>
+<span class="n">dist_a</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">([</span><span class="n">atom_num</span><span class="p">,</span><span class="n">atom_num</span><span class="p">])</span>
+<span class="n">dist_b</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">([</span><span class="n">atom_num</span><span class="p">,</span><span class="n">atom_num</span><span class="p">])</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">atom_num</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">atom_num</span><span class="p">):</span>
+            <span class="n">tmp_a</span><span class="o">=</span><span class="mi">0</span>
+            <span class="n">tmp_b</span><span class="o">=</span><span class="mi">0</span>
+            <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">3</span><span class="p">):</span>
+                    <span class="n">tmp_a</span><span class="o">+=</span><span class="p">(</span><span class="n">pos_a</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">k</span><span class="p">]</span><span class="o">-</span><span class="n">pos_a</span><span class="p">[</span><span class="n">j</span><span class="p">][</span><span class="n">k</span><span class="p">])</span><span class="o">**</span><span class="mi">2</span>
+                    <span class="n">tmp_b</span><span class="o">+=</span><span class="p">(</span><span class="n">pos_b</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">k</span><span class="p">]</span><span class="o">-</span><span class="n">pos_b</span><span class="p">[</span><span class="n">j</span><span class="p">][</span><span class="n">k</span><span class="p">])</span><span class="o">**</span><span class="mi">2</span>
+            <span class="n">dist_a</span><span class="p">[</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">]</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">tmp_a</span><span class="p">)</span>
+            <span class="n">dist_b</span><span class="p">[</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">]</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">tmp_b</span><span class="p">)</span>
+<span class="n">dist_im</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">([</span><span class="n">images</span><span class="p">,</span><span class="n">atom_num</span><span class="p">,</span><span class="n">atom_num</span><span class="p">])</span>
+<span class="n">pos_im</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">([</span><span class="n">images</span><span class="p">,</span><span class="n">atom_num</span><span class="p">,</span><span class="mi">3</span><span class="p">])</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">images</span><span class="p">):</span>
+    <span class="n">dist_im</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">=</span><span class="n">dist_a</span><span class="o">+</span><span class="p">(</span><span class="n">i</span><span class="o">+</span><span class="mf">1.0</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="n">dist_b</span><span class="o">-</span><span class="n">dist_a</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="n">images</span><span class="o">+</span><span class="mf">1.0</span><span class="p">)</span>
+    <span class="n">pos_im</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">=</span><span class="n">pos_a</span><span class="o">+</span><span class="p">(</span><span class="n">i</span><span class="o">+</span><span class="mf">1.0</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="n">pos_b</span><span class="o">-</span><span class="n">pos_a</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="n">images</span><span class="o">+</span><span class="mf">1.0</span><span class="p">)</span>
+
+<span class="c1">#optimization using steepest descent method</span>
+<span class="n">pos_tmp</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">([</span><span class="n">atom_num</span><span class="p">,</span><span class="mi">3</span><span class="p">])</span>
+<span class="n">dist_tmp</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">([</span><span class="n">atom_num</span><span class="p">,</span><span class="n">atom_num</span><span class="p">])</span>
+<span class="n">s0</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">images</span><span class="p">)</span>
+<span class="n">s1</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">images</span><span class="p">)</span>
+<span class="n">flag</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">images</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">im</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">images</span><span class="p">):</span>
+    <span class="k">if</span><span class="p">(</span><span class="n">flag</span><span class="p">[</span><span class="n">im</span><span class="p">]</span><span class="o">==</span><span class="mi">1</span><span class="p">):</span> <span class="k">continue</span>
+    <span class="n">step</span><span class="o">=</span><span class="n">step_init</span>
+    <span class="nb">print</span> <span class="s2">&quot;generate image &quot;</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="n">im</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span>
+    <span class="n">loop</span><span class="o">=</span><span class="mi">0</span>
+    <span class="k">while</span><span class="p">(</span><span class="mi">1</span><span class="p">):</span>
+            <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">atom_num</span><span class="p">):</span>  <span class="c1">#get dist_tmp</span>
+                    <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">atom_num</span><span class="p">):</span>
+                            <span class="k">if</span><span class="p">(</span><span class="n">i</span><span class="o">==</span><span class="n">j</span><span class="p">):</span>
+                                    <span class="n">dist_tmp</span><span class="p">[</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">]</span><span class="o">=</span><span class="mi">10</span>
+                            <span class="k">else</span><span class="p">:</span>
+                                    <span class="n">tmp</span><span class="o">=</span><span class="mi">0</span>
+                                    <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">3</span><span class="p">):</span>
+                                            <span class="n">tmp</span><span class="o">+=</span><span class="p">(</span><span class="n">pos_im</span><span class="p">[</span><span class="n">im</span><span class="p">][</span><span class="n">i</span><span class="p">][</span><span class="n">k</span><span class="p">]</span><span class="o">-</span><span class="n">pos_im</span><span class="p">[</span><span class="n">im</span><span class="p">][</span><span class="n">j</span><span class="p">][</span><span class="n">k</span><span class="p">])</span><span class="o">**</span><span class="mi">2</span>
+                                    <span class="n">dist_tmp</span><span class="p">[</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">]</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">tmp</span><span class="p">)</span>
+            <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">atom_num</span><span class="p">):</span>
+                    <span class="k">for</span> <span class="n">sigma</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">3</span><span class="p">):</span>
+                            <span class="n">grad</span><span class="o">=</span><span class="mi">0</span>
+                            <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">atom_num</span><span class="p">):</span>
+                                    <span class="k">if</span><span class="p">(</span><span class="n">j</span><span class="o">!=</span><span class="n">i</span><span class="p">):</span>
+                                            <span class="n">grad</span><span class="o">+=</span><span class="mi">2</span><span class="o">*</span><span class="p">(</span><span class="n">dist_im</span><span class="p">[</span><span class="n">im</span><span class="p">][</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span><span class="o">-</span><span class="n">dist_tmp</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">])</span><span class="o">*</span><span class="p">(</span><span class="n">pos_im</span><span class="p">[</span><span class="n">im</span><span class="p">][</span><span class="n">i</span><span class="p">][</span><span class="n">sigma</span><span class="p">]</span><span class="o">-</span><span class="n">pos_im</span><span class="p">[</span><span class="n">im</span><span class="p">][</span><span class="n">j</span><span class="p">][</span><span class="n">sigma</span><span class="p">])</span>\
+                                                            <span class="o">*</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">dist_im</span><span class="p">[</span><span class="n">im</span><span class="p">][</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span><span class="o">-</span><span class="n">dist_tmp</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">])</span><span class="o">/</span><span class="n">dist_tmp</span><span class="p">[</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">]</span><span class="o">**</span><span class="mi">5</span>
+                            <span class="n">pos_tmp</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">sigma</span><span class="p">]</span><span class="o">=</span><span class="n">pos_im</span><span class="p">[</span><span class="n">im</span><span class="p">][</span><span class="n">i</span><span class="p">][</span><span class="n">sigma</span><span class="p">]</span><span class="o">+</span><span class="n">step</span><span class="o">*</span><span class="n">grad</span>
+            <span class="n">pos_im</span><span class="p">[</span><span class="n">im</span><span class="p">]</span><span class="o">=</span><span class="n">pos_tmp</span>
+            <span class="c1">#judge convergence</span>
+            <span class="n">s0</span><span class="p">[</span><span class="n">im</span><span class="p">]</span><span class="o">=</span><span class="n">s1</span><span class="p">[</span><span class="n">im</span><span class="p">]</span>
+            <span class="n">s1</span><span class="p">[</span><span class="n">im</span><span class="p">]</span><span class="o">=</span><span class="mi">0</span>
+            <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">atom_num</span><span class="p">):</span>
+                    <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">i</span><span class="p">):</span>
+                            <span class="n">s1</span><span class="p">[</span><span class="n">im</span><span class="p">]</span><span class="o">+=</span><span class="p">(</span><span class="n">dist_im</span><span class="p">[</span><span class="n">im</span><span class="p">][</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span><span class="o">-</span><span class="n">dist_tmp</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">])</span><span class="o">**</span><span class="mi">2</span><span class="o">/</span><span class="n">dist_tmp</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span><span class="o">**</span><span class="mi">4</span>
+            <span class="n">loop</span><span class="o">+=</span><span class="mi">1</span>
+            <span class="nb">print</span> <span class="s2">&quot;loop:</span><span class="si">%d</span><span class="s2">&quot;</span><span class="o">%</span><span class="n">loop</span>
+            <span class="k">if</span><span class="p">(</span><span class="nb">abs</span><span class="p">(</span><span class="n">s0</span><span class="p">[</span><span class="n">im</span><span class="p">]</span><span class="o">-</span><span class="n">s1</span><span class="p">[</span><span class="n">im</span><span class="p">])</span><span class="o">&lt;</span><span class="mf">0.01</span><span class="p">):</span>
+                    <span class="nb">print</span> <span class="s2">&quot;Converged!&quot;</span>
+                    <span class="n">flag</span><span class="p">[</span><span class="n">im</span><span class="p">]</span><span class="o">=</span><span class="mi">1</span>
+                    <span class="k">break</span>
+            <span class="k">if</span><span class="p">(</span><span class="n">loop</span><span class="o">&gt;</span><span class="mi">1</span> <span class="ow">and</span> <span class="n">s1</span><span class="p">[</span><span class="n">im</span><span class="p">]</span><span class="o">&gt;</span><span class="n">s0</span><span class="p">[</span><span class="n">im</span><span class="p">]):</span> <span class="n">step</span><span class="o">=</span><span class="n">step</span><span class="o">/</span><span class="mi">3</span>
+
+<span class="c1">#mkdir and generate poscar files</span>
+<span class="k">if</span><span class="p">(</span><span class="n">images</span><span class="o">+</span><span class="mi">1</span><span class="o">&lt;</span><span class="mi">10</span><span class="p">):</span> <span class="n">num</span><span class="o">=</span><span class="s1">&#39;0&#39;</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="n">images</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>       <span class="n">num</span><span class="o">=</span><span class="nb">str</span><span class="p">(</span><span class="n">images</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">os</span><span class="o">.</span><span class="n">system</span><span class="p">(</span><span class="s2">&quot;mkdir 00&quot;</span><span class="p">)</span>
+<span class="n">os</span><span class="o">.</span><span class="n">system</span><span class="p">(</span><span class="s2">&quot;cp p1 00/POSCAR&quot;</span><span class="p">)</span>
+<span class="n">os</span><span class="o">.</span><span class="n">system</span><span class="p">(</span><span class="s2">&quot;mkdir &quot;</span><span class="o">+</span><span class="n">num</span><span class="p">)</span>
+<span class="n">os</span><span class="o">.</span><span class="n">system</span><span class="p">(</span><span class="s2">&quot;cp p2 &quot;</span><span class="o">+</span><span class="n">num</span><span class="o">+</span><span class="s2">&quot;/POSCAR&quot;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">images</span><span class="p">):</span>
+    <span class="k">if</span><span class="p">(</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="o">&lt;</span><span class="mi">10</span><span class="p">):</span> <span class="n">num</span><span class="o">=</span><span class="s1">&#39;0&#39;</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>       <span class="n">num</span><span class="o">=</span><span class="nb">str</span><span class="p">(</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span>
+    <span class="n">os</span><span class="o">.</span><span class="n">system</span><span class="p">(</span><span class="s2">&quot;mkdir &quot;</span><span class="o">+</span><span class="n">num</span><span class="p">)</span>
+    <span class="n">data</span><span class="o">=</span><span class="n">pos_im</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">tolist</span><span class="p">()</span>
+    <span class="n">filename</span><span class="o">=</span><span class="n">num</span><span class="o">+</span><span class="s2">&quot;/POSCAR&quot;</span>
+    <span class="n">f</span><span class="o">=</span><span class="n">file</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span><span class="s2">&quot;a+&quot;</span><span class="p">)</span>
+    <span class="n">f</span><span class="o">.</span><span class="n">writelines</span><span class="p">(</span><span class="n">head</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">atom_num</span><span class="p">):</span>
+            <span class="n">line</span><span class="o">=</span><span class="nb">map</span><span class="p">(</span><span class="nb">str</span><span class="p">,</span><span class="n">data</span><span class="p">[</span><span class="n">j</span><span class="p">])</span>
+            <span class="n">line</span><span class="o">=</span><span class="s2">&quot;  &quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">line</span><span class="p">)</span>
+            <span class="k">if</span><span class="p">(</span><span class="n">fix</span><span class="p">[</span><span class="n">j</span><span class="p">]</span><span class="o">==</span><span class="mi">1</span><span class="p">):</span> <span class="n">line</span><span class="o">=</span><span class="n">line</span><span class="o">+</span><span class="s1">&#39;    F  F  F</span><span class="se">\n</span><span class="s1">&#39;</span>
+            <span class="k">else</span><span class="p">:</span>          <span class="n">line</span><span class="o">=</span><span class="n">line</span><span class="o">+</span><span class="s1">&#39;    T  T  T</span><span class="se">\n</span><span class="s1">&#39;</span>
+            <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">line</span><span class="p">)</span>
+    <span class="n">f</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="python_plot_dos_band.html" class="btn btn-neutral float-right" title="plot DOS &amp; Band Structure" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="python_calculate_freq.html" class="btn btn-neutral" title="calculate thermodymamics" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2018, Liren Liu.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../',
+            VERSION:'1.0',
+            LANGUAGE:'en',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../_static/doctools.js"></script>
+      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

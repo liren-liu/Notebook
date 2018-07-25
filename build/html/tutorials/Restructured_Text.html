@@ -1,0 +1,484 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>A ReStructuredText Primer &mdash; Liren Liu&#39;s Notebook 1.0 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="prev" title="Vim skills" href="vim.html" /> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> Liren Liu's Notebook
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../me.html"><strong>Pai Li (李湃)</strong></a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../scripts/vasp.html">Vasp</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../scripts/super.html">Scripts for job management system on super-computer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../scripts/kmc.html">kMC simulation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../scripts/ml.html">Machine Learning tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../scripts/python.html">Python Scripts</a></li>
+</ul>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="latex.html">Math notation in Latex</a></li>
+<li class="toctree-l1"><a class="reference internal" href="vim.html">Vim skills</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">A ReStructuredText Primer</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#structure">Structure</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#text-styles">Text styles</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#lists">Lists</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#preformatting-code-samples">Preformatting (code samples)</a></li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Liren Liu's Notebook</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+      <li>A ReStructuredText Primer</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/tutorials/Restructured_Text.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="a-restructuredtext-primer">
+<h1><a class="toc-backref" href="#id10">A ReStructuredText Primer</a><a class="headerlink" href="#a-restructuredtext-primer" title="Permalink to this headline">¶</a></h1>
+<div class="contents topic" id="contents">
+<p class="topic-title first">Contents</p>
+<ul class="simple">
+<li><a class="reference internal" href="#a-restructuredtext-primer" id="id10">A ReStructuredText Primer</a><ul>
+<li><a class="reference internal" href="#structure" id="id11">Structure</a></li>
+<li><a class="reference internal" href="#text-styles" id="id12">Text styles</a></li>
+<li><a class="reference internal" href="#lists" id="id13">Lists</a></li>
+<li><a class="reference internal" href="#preformatting-code-samples" id="id14">Preformatting (code samples)</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<p>The text below contains links that look like “(<a class="reference external" href="quickref.html">quickref</a>)”.  These
+are relative links that point to the <a class="reference external" href="quickref.html">Quick reStructuredText</a> user
+reference.  If these links don’t work, please refer to the <a class="reference external" href="http://docutils.sourceforge.net/docs/user/rst/quickref.html">master
+quick reference</a> document.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">This document is an informal introduction to
+reStructuredText.  The <a href="#id15"><span class="problematic" id="id16">`What Next?`_</span></a> section below has links to
+further resources, including a formal reference.</p>
+</div>
+<div class="section" id="structure">
+<h2><a class="toc-backref" href="#id11">Structure</a><a class="headerlink" href="#structure" title="Permalink to this headline">¶</a></h2>
+<p>From the outset, let me say that “Structured Text” is probably a bit
+of a misnomer.  It’s more like “Relaxed Text” that uses certain
+consistent patterns.  These patterns are interpreted by a HTML
+converter to produce “Very Structured Text” that can be used by a web
+browser.</p>
+<p>The most basic pattern recognised is a <strong>paragraph</strong> (<a class="reference external" href="quickref.html#paragraphs">quickref</a>).
+That’s a chunk of text that is separated by blank lines (one is
+enough).  Paragraphs must have the same indentation – that is, line
+up at their left edge.  Paragraphs that start indented will result in
+indented quote paragraphs. For example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">This</span> <span class="ow">is</span> <span class="n">a</span> <span class="n">paragraph</span><span class="o">.</span>  <span class="n">It</span><span class="s1">&#39;s quite</span>
+<span class="n">short</span><span class="o">.</span>
+
+   <span class="n">This</span> <span class="n">paragraph</span> <span class="n">will</span> <span class="n">result</span> <span class="ow">in</span> <span class="n">an</span> <span class="n">indented</span> <span class="n">block</span> <span class="n">of</span>
+   <span class="n">text</span><span class="p">,</span> <span class="n">typically</span> <span class="n">used</span> <span class="k">for</span> <span class="n">quoting</span> <span class="n">other</span> <span class="n">text</span><span class="o">.</span>
+
+<span class="n">This</span> <span class="ow">is</span> <span class="n">another</span> <span class="n">one</span><span class="o">.</span>
+</pre></div>
+</div>
+<p>Results in:</p>
+<blockquote>
+<div><p>This is a paragraph.  It’s quite
+short.</p>
+<blockquote>
+<div>This paragraph will result in an indented block of
+text, typically used for quoting other text.</div></blockquote>
+<p>This is another one.</p>
+</div></blockquote>
+</div>
+<div class="section" id="text-styles">
+<h2><a class="toc-backref" href="#id12">Text styles</a><a class="headerlink" href="#text-styles" title="Permalink to this headline">¶</a></h2>
+<p>(<a class="reference external" href="quickref.html#inline-markup">quickref</a>)</p>
+<p>Inside paragraphs and other bodies of text, you may additionally mark
+text for <em>italics</em> with “<code class="docutils literal notranslate"><span class="pre">*italics*</span></code>” or <strong>bold</strong> with
+“<code class="docutils literal notranslate"><span class="pre">**bold**</span></code>”.  This is called “inline markup”.</p>
+<p>If you want something to appear as a fixed-space literal, use
+“<code class="docutils literal notranslate"><span class="pre">``double</span> <span class="pre">back-quotes``</span></code>”.  Note that no further fiddling is done
+inside the double back-quotes – so asterisks “<code class="docutils literal notranslate"><span class="pre">*</span></code>” etc. are left
+alone.</p>
+<p>If you find that you want to use one of the “special” characters in
+text, it will generally be OK – reStructuredText is pretty smart.
+For example, this lone asterisk * is handled just fine, as is the
+asterisk in this equation: 5*6=30.  If you actually
+want text *surrounded by asterisks* to <strong>not</strong> be italicised, then
+you need to indicate that the asterisk is not special.  You do this by
+placing a backslash just before it, like so “<code class="docutils literal notranslate"><span class="pre">\*</span></code>” (<a class="reference external" href="quickref.html#escaping">quickref</a>), or
+by enclosing it in double back-quotes (inline literals), like this:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>``*``
+</pre></div>
+</div>
+<div class="admonition tip">
+<p class="first admonition-title">Tip</p>
+<p class="last">Think of inline markup as a form of (parentheses) and use it
+the same way: immediately before and after the text being marked
+up.  Inline markup by itself (surrounded by whitespace) or in the
+middle of a word won’t be recognized.  See the <a class="reference external" href="../../ref/rst/restructuredtext.html#inline-markup">markup spec</a> for
+full details.</p>
+</div>
+</div>
+<div class="section" id="lists">
+<h2><a class="toc-backref" href="#id13">Lists</a><a class="headerlink" href="#lists" title="Permalink to this headline">¶</a></h2>
+<p>Lists of items come in three main flavours: <strong>enumerated</strong>,
+<strong>bulleted</strong> and <strong>definitions</strong>.  In all list cases, you may have as
+many paragraphs, sublists, etc. as you want, as long as the left-hand
+side of the paragraph or whatever aligns with the first line of text
+in the list item.</p>
+<p>Lists must always start a new paragraph – that is, they must appear
+after a blank line.</p>
+<dl class="docutils">
+<dt><strong>enumerated</strong> lists (numbers, letters or roman numerals; <a class="reference external" href="quickref.html#enumerated-lists">quickref</a>)</dt>
+<dd><p class="first">Start a line off with a number or letter followed by a period “.”,
+right bracket “)” or surrounded by brackets “( )” – whatever you’re
+comfortable with.  All of the following forms are recognised:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>1. numbers
+
+A. upper-case letters
+   and it goes over many lines
+
+   with two paragraphs and all!
+
+a. lower-case letters
+
+   3. with a sub-list starting at a different number
+   4. make sure the numbers are in the correct sequence though!
+
+I. upper-case roman numerals
+
+i. lower-case roman numerals
+
+(1) numbers again
+
+1) and again
+</pre></div>
+</div>
+<p>Results in (note: the different enumerated list styles are not
+always supported by every web browser, so you may not get the full
+effect here):</p>
+<ol class="arabic simple">
+<li>numbers</li>
+</ol>
+<ol class="upperalpha">
+<li><p class="first">upper-case letters
+and it goes over many lines</p>
+<p>with two paragraphs and all!</p>
+</li>
+</ol>
+<ol class="loweralpha simple">
+<li>lower-case letters<ol class="arabic" start="3">
+<li>with a sub-list starting at a different number</li>
+<li>make sure the numbers are in the correct sequence though!</li>
+</ol>
+</li>
+</ol>
+<ol class="upperroman simple">
+<li>upper-case roman numerals</li>
+</ol>
+<ol class="lowerroman simple">
+<li>lower-case roman numerals</li>
+</ol>
+<ol class="arabic simple">
+<li>numbers again</li>
+</ol>
+<ol class="last arabic simple">
+<li>and again</li>
+</ol>
+</dd>
+<dt><strong>bulleted</strong> lists (<a class="reference external" href="quickref.html#bullet-lists">quickref</a>)</dt>
+<dd><p class="first">Just like enumerated lists, start the line off with a bullet point
+character - either “-“, “+” or “*”:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">*</span> <span class="n">a</span> <span class="n">bullet</span> <span class="n">point</span> <span class="n">using</span> <span class="s2">&quot;*&quot;</span>
+
+  <span class="o">-</span> <span class="n">a</span> <span class="n">sub</span><span class="o">-</span><span class="nb">list</span> <span class="n">using</span> <span class="s2">&quot;-&quot;</span>
+
+    <span class="o">+</span> <span class="n">yet</span> <span class="n">another</span> <span class="n">sub</span><span class="o">-</span><span class="nb">list</span>
+
+  <span class="o">-</span> <span class="n">another</span> <span class="n">item</span>
+</pre></div>
+</div>
+<p>Results in:</p>
+<ul class="last simple">
+<li>a bullet point using “*”<ul>
+<li>a sub-list using “-“<ul>
+<li>yet another sub-list</li>
+</ul>
+</li>
+<li>another item</li>
+</ul>
+</li>
+</ul>
+</dd>
+<dt><strong>definition</strong> lists (<a class="reference external" href="quickref.html#definition-lists">quickref</a>)</dt>
+<dd><p class="first">Unlike the other two, the definition lists consist of a term, and
+the definition of that term.  The format of a definition list is:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">what</span>
+  <span class="n">Definition</span> <span class="n">lists</span> <span class="n">associate</span> <span class="n">a</span> <span class="n">term</span> <span class="k">with</span> <span class="n">a</span> <span class="n">definition</span><span class="o">.</span>
+
+<span class="o">*</span><span class="n">how</span><span class="o">*</span>
+  <span class="n">The</span> <span class="n">term</span> <span class="ow">is</span> <span class="n">a</span> <span class="n">one</span><span class="o">-</span><span class="n">line</span> <span class="n">phrase</span><span class="p">,</span> <span class="ow">and</span> <span class="n">the</span> <span class="n">definition</span> <span class="ow">is</span> <span class="n">one</span> <span class="ow">or</span> <span class="n">more</span>
+  <span class="n">paragraphs</span> <span class="ow">or</span> <span class="n">body</span> <span class="n">elements</span><span class="p">,</span> <span class="n">indented</span> <span class="n">relative</span> <span class="n">to</span> <span class="n">the</span> <span class="n">term</span><span class="o">.</span>
+  <span class="n">Blank</span> <span class="n">lines</span> <span class="n">are</span> <span class="ow">not</span> <span class="n">allowed</span> <span class="n">between</span> <span class="n">term</span> <span class="ow">and</span> <span class="n">definition</span><span class="o">.</span>
+</pre></div>
+</div>
+<p>Results in:</p>
+<dl class="last docutils">
+<dt>what</dt>
+<dd>Definition lists associate a term with a definition.</dd>
+<dt><em>how</em></dt>
+<dd>The term is a one-line phrase, and the definition is one or more
+paragraphs or body elements, indented relative to the term.
+Blank lines are not allowed between term and definition.</dd>
+</dl>
+</dd>
+</dl>
+</div>
+<div class="section" id="preformatting-code-samples">
+<h2><a class="toc-backref" href="#id14">Preformatting (code samples)</a><a class="headerlink" href="#preformatting-code-samples" title="Permalink to this headline">¶</a></h2>
+<p>(<a class="reference external" href="quickref.html#literal-blocks">quickref</a>)</p>
+<p>To just include a chunk of preformatted, never-to-be-fiddled-with
+text, finish the prior paragraph with “<code class="docutils literal notranslate"><span class="pre">::</span></code>”.  The preformatted
+block is finished when the text falls back to the same indentation
+level as a paragraph prior to the preformatted block.  For example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">An</span> <span class="n">example</span><span class="p">::</span>
+
+    <span class="n">Whitespace</span><span class="p">,</span> <span class="n">newlines</span><span class="p">,</span> <span class="n">blank</span> <span class="n">lines</span><span class="p">,</span> <span class="ow">and</span> <span class="nb">all</span> <span class="n">kinds</span> <span class="n">of</span> <span class="n">markup</span>
+      <span class="p">(</span><span class="n">like</span> <span class="o">*</span><span class="n">this</span><span class="o">*</span> <span class="ow">or</span> \<span class="n">this</span><span class="p">)</span> <span class="ow">is</span> <span class="n">preserved</span> <span class="n">by</span> <span class="n">literal</span> <span class="n">blocks</span><span class="o">.</span>
+  <span class="n">Lookie</span> <span class="n">here</span><span class="p">,</span> <span class="n">I</span><span class="s1">&#39;ve dropped an indentation level</span>
+  <span class="p">(</span><span class="n">but</span> <span class="ow">not</span> <span class="n">far</span> <span class="n">enough</span><span class="p">)</span>
+
+<span class="n">no</span> <span class="n">more</span> <span class="n">example</span>
+</pre></div>
+</div>
+<p>Results in:</p>
+<blockquote>
+<div><p>An example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>  <span class="n">Whitespace</span><span class="p">,</span> <span class="n">newlines</span><span class="p">,</span> <span class="n">blank</span> <span class="n">lines</span><span class="p">,</span> <span class="ow">and</span> <span class="nb">all</span> <span class="n">kinds</span> <span class="n">of</span> <span class="n">markup</span>
+    <span class="p">(</span><span class="n">like</span> <span class="o">*</span><span class="n">this</span><span class="o">*</span> <span class="ow">or</span> \<span class="n">this</span><span class="p">)</span> <span class="ow">is</span> <span class="n">preserved</span> <span class="n">by</span> <span class="n">literal</span> <span class="n">blocks</span><span class="o">.</span>
+<span class="n">Lookie</span> <span class="n">here</span><span class="p">,</span> <span class="n">I</span><span class="s1">&#39;ve dropped an indentation level</span>
+<span class="p">(</span><span class="n">but</span> <span class="ow">not</span> <span class="n">far</span> <span class="n">enough</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>no more example</p>
+</div></blockquote>
+<p>Note that if a paragraph consists only of “<code class="docutils literal notranslate"><span class="pre">::</span></code>”, then it’s removed
+from the output:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">::</span>
+
+    <span class="n">This</span> <span class="ow">is</span> <span class="n">preformatted</span> <span class="n">text</span><span class="p">,</span> <span class="ow">and</span> <span class="n">the</span>
+    <span class="n">last</span> <span class="s2">&quot;::&quot;</span> <span class="n">paragraph</span> <span class="ow">is</span> <span class="n">removed</span>
+</pre></div>
+</div>
+<p>Results in:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">This</span> <span class="ow">is</span> <span class="n">preformatted</span> <span class="n">text</span><span class="p">,</span> <span class="ow">and</span> <span class="n">the</span>
+<span class="n">last</span> <span class="s2">&quot;::&quot;</span> <span class="n">paragraph</span> <span class="ow">is</span> <span class="n">removed</span>
+</pre></div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Author:</th><td class="field-body">Richard Jones</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+      
+        <a href="vim.html" class="btn btn-neutral" title="Vim skills" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2018, Liren Liu.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'1.0',
+            LANGUAGE:'en',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

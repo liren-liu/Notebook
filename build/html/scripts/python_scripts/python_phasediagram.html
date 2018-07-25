@@ -1,0 +1,313 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Plot Phasediagram &mdash; Liren Liu&#39;s Notebook 1.0 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Plot plain figures" href="python_plot.html" />
+    <link rel="prev" title="Get MSD (mean square displacement) from MD trajectory" href="python_msd.html" /> 
+
+  
+  <script src="../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> Liren Liu's Notebook
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../me.html"><strong>Pai Li (李湃)</strong></a></li>
+</ul>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../vasp.html">Vasp</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../super.html">Scripts for job management system on super-computer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../kmc.html">kMC simulation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ml.html">Machine Learning tools</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../python.html">Python Scripts</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="../python.html#scripts">Scripts</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="python_conductivity.html">Calculate ionic conductivity in solid</a></li>
+<li class="toctree-l3"><a class="reference internal" href="python_msd.html">Get MSD (mean square displacement) from MD trajectory</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Plot Phasediagram</a></li>
+<li class="toctree-l3"><a class="reference internal" href="python_plot.html">Plot plain figures</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../tutorials/latex.html">Math notation in Latex</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../tutorials/vim.html">Vim skills</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../tutorials/Restructured_Text.html">A ReStructuredText Primer</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">Liren Liu's Notebook</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../python.html">Python Scripts</a> &raquo;</li>
+        
+      <li>Plot Phasediagram</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../../_sources/scripts/python_scripts/python_phasediagram.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="plot-phasediagram">
+<h1>Plot Phasediagram<a class="headerlink" href="#plot-phasediagram" title="Permalink to this headline">¶</a></h1>
+<p>This python script use ase to plot phasediagram</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">#lipai@mail.ustc.edu.cn</span>
+<span class="kn">from</span> <span class="nn">ase.phasediagram</span> <span class="k">import</span> <span class="n">PhaseDiagram</span>
+<span class="n">u</span><span class="o">=</span><span class="p">[</span><span class="mf">0.0</span><span class="p">,</span><span class="o">-</span><span class="mf">2.92</span><span class="p">,</span><span class="o">-</span><span class="mf">3.10</span><span class="p">,</span><span class="o">-</span><span class="mf">3.20</span><span class="p">]</span>
+
+<span class="n">Li</span><span class="o">=</span><span class="mi">0</span>
+<span class="n">Br</span><span class="o">=</span><span class="mf">0.0</span>
+<span class="n">O2</span><span class="o">=</span><span class="mf">0.0</span>
+
+<span class="n">Br2O3</span><span class="o">=-</span><span class="mf">0.209</span><span class="o">*</span><span class="mi">5</span>
+
+<span class="k">for</span> <span class="n">u_Li</span> <span class="ow">in</span> <span class="n">u</span><span class="p">:</span>
+      <span class="n">Li2O</span><span class="o">=-</span><span class="mf">2.071</span><span class="o">*</span><span class="mi">3</span><span class="o">-</span><span class="mi">2</span><span class="o">*</span><span class="n">u_Li</span>
+      <span class="n">Li2O2</span><span class="o">=-</span><span class="mf">1.65</span><span class="o">*</span><span class="mi">4</span><span class="o">-</span><span class="mi">2</span><span class="o">*</span><span class="n">u_Li</span>
+
+      <span class="n">LiBr</span><span class="o">=-</span><span class="mf">1.573</span><span class="o">*</span><span class="mi">2</span><span class="o">-</span><span class="n">u_Li</span>
+
+      <span class="c1">#Li3OBr=Li2O+LiBr+0.075*5</span>
+      <span class="n">Li32O11Br10</span><span class="o">=</span><span class="mi">11</span><span class="o">*</span><span class="n">Li2O</span><span class="o">+</span><span class="mi">10</span><span class="o">*</span><span class="n">LiBr</span><span class="o">+</span><span class="mf">0.059</span><span class="o">*</span><span class="mi">53</span>
+
+      <span class="n">refs</span> <span class="o">=</span> <span class="p">[(</span><span class="s1">&#39;Br&#39;</span><span class="p">,</span><span class="n">Br</span><span class="p">),</span>
+              <span class="p">(</span><span class="s1">&#39;O2&#39;</span><span class="p">,</span><span class="n">O2</span><span class="p">),</span>
+              <span class="p">(</span><span class="s1">&#39;Li&#39;</span><span class="p">,</span><span class="n">u_Li</span><span class="p">),</span>
+              <span class="p">(</span><span class="s1">&#39;Br2O3&#39;</span><span class="p">,</span><span class="n">Br2O3</span><span class="p">),</span>
+              <span class="p">(</span><span class="s1">&#39;Li2O&#39;</span><span class="p">,</span><span class="n">Li2O</span><span class="p">),</span>
+              <span class="p">(</span><span class="s1">&#39;Li2O2&#39;</span><span class="p">,</span><span class="n">Li2O2</span><span class="p">),</span>
+              <span class="p">(</span><span class="s1">&#39;LiBr&#39;</span><span class="p">,</span><span class="n">LiBr</span><span class="p">),</span>
+      <span class="c1">#        (&#39;Li3OBr&#39;,Li3OBr),</span>
+              <span class="p">(</span><span class="s1">&#39;Li32O11Br10&#39;</span><span class="p">,</span><span class="n">Li32O11Br10</span><span class="p">)]</span>
+
+      <span class="n">pd</span> <span class="o">=</span> <span class="n">PhaseDiagram</span><span class="p">(</span><span class="n">refs</span><span class="p">)</span>
+      <span class="n">fig</span><span class="o">=</span><span class="n">pd</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">show</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+      <span class="n">fig</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="s2">&quot;try&quot;</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="n">u_Li</span><span class="p">)</span><span class="o">+</span><span class="s2">&quot;.png&quot;</span><span class="p">)</span>
+      <span class="c1">#pd.savefig(str(u_Li)+&quot;.png&quot;)</span>
+
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="n">u</span><span class="o">=</span><span class="p">[</span><span class="mf">0.0</span><span class="p">,</span><span class="o">-</span><span class="mf">2.92</span><span class="p">,</span><span class="o">-</span><span class="mf">3.10</span><span class="p">,</span><span class="o">-</span><span class="mf">3.20</span><span class="p">]</span>
+
+<span class="k">for</span> <span class="n">u_Li</span> <span class="ow">in</span> <span class="n">u</span><span class="p">:</span>
+      <span class="n">O2</span><span class="o">=</span><span class="mf">0.0</span>
+      <span class="n">Li2O</span><span class="o">=</span><span class="p">(</span><span class="o">-</span><span class="mf">2.071</span><span class="o">*</span><span class="mi">3</span><span class="o">-</span><span class="mi">2</span><span class="o">*</span><span class="n">u_Li</span><span class="p">)</span><span class="o">/</span><span class="mi">1</span>
+      <span class="n">Li2O2</span><span class="o">=</span><span class="p">(</span><span class="o">-</span><span class="mf">1.65</span><span class="o">*</span><span class="mi">4</span><span class="o">-</span><span class="mi">2</span><span class="o">*</span><span class="n">u_Li</span><span class="p">)</span><span class="o">/</span><span class="mi">2</span>
+
+      <span class="n">Br2O3</span><span class="o">=</span><span class="p">(</span><span class="o">-</span><span class="mf">0.209</span><span class="o">*</span><span class="mi">5</span><span class="p">)</span><span class="o">/</span><span class="mi">5</span>
+
+      <span class="n">Br</span><span class="o">=</span><span class="mf">0.0</span>
+      <span class="n">LiBr</span><span class="o">=</span><span class="p">(</span><span class="o">-</span><span class="mf">1.573</span><span class="o">*</span><span class="mi">2</span><span class="o">-</span><span class="n">u_Li</span><span class="p">)</span><span class="o">/</span><span class="mi">1</span>
+      <span class="n">Li32O11Br10</span><span class="o">=</span><span class="p">(</span><span class="mi">11</span><span class="o">*</span><span class="n">Li2O</span><span class="o">+</span><span class="mi">10</span><span class="o">*</span><span class="n">LiBr</span><span class="o">+</span><span class="mf">0.059</span><span class="o">*</span><span class="mi">53</span><span class="p">)</span><span class="o">/</span><span class="mi">21</span>
+
+      <span class="n">x_Br</span><span class="o">=</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">2</span><span class="o">/</span><span class="mf">5.0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">10</span><span class="o">/</span><span class="mf">21.0</span><span class="p">]</span>
+      <span class="n">y</span><span class="o">=</span><span class="p">[</span><span class="n">Br</span><span class="p">,</span><span class="n">O2</span><span class="p">,</span><span class="n">Br2O3</span><span class="p">,</span><span class="n">Li2O</span><span class="p">,</span><span class="n">Li2O2</span><span class="p">,</span><span class="n">LiBr</span><span class="p">,</span><span class="n">Li32O11Br10</span><span class="p">]</span>
+      <span class="n">name</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;Br&quot;</span><span class="p">,</span><span class="s2">&quot;O2&quot;</span><span class="p">,</span><span class="s2">&quot;Br2O3&quot;</span><span class="p">,</span><span class="s2">&quot;Li2O&quot;</span><span class="p">,</span><span class="s2">&quot;Li2O2&quot;</span><span class="p">,</span><span class="s2">&quot;LiBr&quot;</span><span class="p">,</span><span class="s2">&quot;Li32O11Br10&quot;</span><span class="p">]</span>
+      <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x_Br</span><span class="p">,</span><span class="n">y</span><span class="p">,</span><span class="s1">&#39;sr&#39;</span><span class="p">)</span>
+      <span class="k">for</span> <span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">,</span><span class="n">k</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">x_Br</span><span class="p">,</span><span class="n">y</span><span class="p">,</span><span class="n">name</span><span class="p">):</span>
+            <span class="c1">#cname=</span>
+            <span class="k">if</span> <span class="n">k</span><span class="o">==</span><span class="s2">&quot;Li2O&quot;</span> <span class="p">:</span>
+                  <span class="n">plt</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="n">i</span><span class="o">-</span><span class="mf">0.09</span><span class="p">,</span><span class="n">j</span><span class="o">+</span><span class="mf">0.01</span><span class="p">,</span><span class="n">k</span><span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;g&#39;</span><span class="p">)</span>
+            <span class="k">else</span><span class="p">:</span>
+                  <span class="n">plt</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="n">i</span><span class="o">+</span><span class="mf">0.02</span><span class="p">,</span><span class="n">j</span><span class="o">+</span><span class="mf">0.01</span><span class="p">,</span><span class="n">k</span><span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;r&#39;</span><span class="p">)</span>
+      <span class="n">plt</span><span class="o">.</span><span class="n">xlim</span><span class="p">([</span><span class="o">-</span><span class="mf">0.1</span><span class="p">,</span><span class="mf">1.1</span><span class="p">])</span>
+      <span class="n">plt</span><span class="o">.</span><span class="n">axis</span><span class="p">(</span><span class="s2">&quot;off&quot;</span><span class="p">)</span>
+      <span class="n">plt</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">u_Li</span><span class="p">)</span><span class="o">+</span><span class="s2">&quot;.png&quot;</span><span class="p">)</span>
+      <span class="n">plt</span><span class="o">.</span><span class="n">clf</span><span class="p">()</span>
+
+      <span class="nb">print</span> <span class="s2">&quot;x_Br     y&quot;</span>
+      <span class="k">for</span> <span class="n">i</span><span class="p">,</span><span class="n">j</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">x_Br</span><span class="p">,</span><span class="n">y</span><span class="p">):</span>
+            <span class="nb">print</span> <span class="n">i</span><span class="p">,</span><span class="n">j</span>
+</pre></div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="python_plot.html" class="btn btn-neutral float-right" title="Plot plain figures" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="python_msd.html" class="btn btn-neutral" title="Get MSD (mean square displacement) from MD trajectory" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2018, Liren Liu.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../',
+            VERSION:'1.0',
+            LANGUAGE:'en',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../_static/doctools.js"></script>
+      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

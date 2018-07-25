@@ -1,0 +1,320 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Extract data from OUTCAR to series XSF files &mdash; Liren Liu&#39;s Notebook 1.0 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Convert POSCAR to lammps input files" href="pos2lmp.html" />
+    <link rel="prev" title="Convert lammps structure to XYZ file" href="lmp2xyz.html" /> 
+
+  
+  <script src="../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> Liren Liu's Notebook
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../me.html"><strong>Pai Li (李湃)</strong></a></li>
+</ul>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../vasp.html">Vasp</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../super.html">Scripts for job management system on super-computer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../kmc.html">kMC simulation</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../ml.html">Machine Learning tools</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../ml.html#useful-tools-on-web-for-free">Useful tools on web for free</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../ml.html#scripts">Scripts</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="gaussian2xsf.html">Extract data from Gaussian output file *.log to series XSF files</a></li>
+<li class="toctree-l3"><a class="reference internal" href="lmp2xyz.html">Convert lammps structure to XYZ file</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Extract data from OUTCAR to series XSF files</a></li>
+<li class="toctree-l3"><a class="reference internal" href="pos2lmp.html">Convert POSCAR to lammps input files</a></li>
+<li class="toctree-l3"><a class="reference internal" href="pos2xsf.html">Convert POSCAR to XSF files</a></li>
+<li class="toctree-l3"><a class="reference internal" href="python_get_species_num.html">Calculate species numbers in a large configuration</a></li>
+<li class="toctree-l3"><a class="reference internal" href="python_traj.xyz2pos.html">Extract poscar files from traj.xyz</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../python.html">Python Scripts</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../tutorials/latex.html">Math notation in Latex</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../tutorials/vim.html">Vim skills</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../tutorials/Restructured_Text.html">A ReStructuredText Primer</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">Liren Liu's Notebook</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../ml.html">Machine Learning tools</a> &raquo;</li>
+        
+      <li>Extract data from OUTCAR to series XSF files</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../../_sources/scripts/ml_scripts/outcar2xsf.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="extract-data-from-outcar-to-series-xsf-files">
+<h1>Extract data from OUTCAR to series XSF files<a class="headerlink" href="#extract-data-from-outcar-to-series-xsf-files" title="Permalink to this headline">¶</a></h1>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>#!/bin/sh
+#lipai@mail.ustc.edu.cn
+#creat xsf files using OUTCAR and POSCAR
+
+if [ $# = 0 ]; then
+      out=&quot;OUTCAR&quot;
+else
+      out=$1
+fi
+echo $out
+rm *.temp
+
+awk &#39;/POSITION/,/drift/{
+ if(NF==6) print $0
+}&#39; $out  &gt; pos.temp
+grep &quot;energy  without &quot; $out |awk &#39;{print $4}&#39; &gt;energy.temp
+
+#head -5 POSCAR |tail -3 &gt; primvec.temp
+#atom_1=`awk &#39;{if(NR==6) print $1}&#39; POSCAR`
+#atom_2=`awk &#39;{if(NR==6) print $2}&#39; POSCAR`
+#num_1=`awk &#39;{if(NR==7) print $1}&#39; POSCAR`
+#num_2=`awk &#39;{if(NR==7) print $2}&#39; POSCAR`
+grep -A 3 &quot;direct lattice vectors&quot; $out \
+|head -4|tail -3 |awk &#39;{printf(&quot;%f    %f    %f\n&quot;,$1,$2,$3)}&#39; &gt;primvec.temp
+atom_1=`grep &quot;POTCAR&quot; $out |awk &#39;NR==1{print $3}&#39;`
+atom_2=`grep &quot;POTCAR&quot; $out |awk &#39;NR==2{print $3}&#39;`
+num_1=`grep &quot;ions per type&quot; $out |head -1 \
+|awk &#39;{print $5}&#39; `
+num_2=`grep &quot;ions per type&quot; $out |head -1 \
+|awk &#39;{print $6}&#39; `
+
+num_atom=`echo &quot;$num_1+$num_2&quot; |bc`
+lines=`wc pos.temp|awk &#39;{print $1}&#39;`
+num_str=`echo &quot;$lines/$num_atom&quot; |bc`
+
+for i in `seq $num_1`
+do
+      echo &quot;$atom_1&quot; &gt;&gt; type.temp
+done
+for i in `seq $num_2`
+do
+      echo &quot;$atom_2&quot; &gt;&gt; type.temp
+done
+
+echo $atom_1 $num_1
+echo $atom_2 $num_2
+echo &quot;all $num_atom&quot;
+echo &quot;num of str: $num_str&quot;
+
+for i in `seq $num_str`
+do
+      energy=`head -n $i energy.temp|tail -1`
+      echo &quot;# total energy = $energy eV&quot; &gt;&gt; str_$i.xsf
+      echo &quot; &quot; &gt;&gt; str_$i.xsf
+      echo &quot;CRYSTAL&quot; &gt;&gt; str_$i.xsf
+      echo &quot;PRIMVEC&quot; &gt;&gt; str_$i.xsf
+      cat primvec.temp &gt;&gt; str_$i.xsf
+      echo &quot;PRIMCOORD&quot; &gt;&gt; str_$i.xsf
+      echo &quot;$num_atom 1&quot; &gt;&gt; str_$i.xsf
+      end=`echo &quot;$i*$num_atom&quot; |bc `
+      head -n $end pos.temp|tail -n $num_atom &gt;pos_i.temp
+      paste type.temp pos_i.temp &gt;&gt; str_$i.xsf
+      mv str_$i.xsf $out-$i.xsf
+done
+
+rm *.temp
+if [ ! -d &quot;struc&quot; ]; then
+      mkdir struc
+fi
+mv *xsf struc
+</pre></div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="pos2lmp.html" class="btn btn-neutral float-right" title="Convert POSCAR to lammps input files" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="lmp2xyz.html" class="btn btn-neutral" title="Convert lammps structure to XYZ file" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2018, Liren Liu.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../',
+            VERSION:'1.0',
+            LANGUAGE:'en',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../_static/doctools.js"></script>
+      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

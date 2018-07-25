@@ -1,47 +1,61 @@
-.. Liren Liu's Notebook documentation master file, created by
-   sphinx-quickstart on Mon Jul 23 02:01:00 2018.
+.. test documentation master file, created by
+   sphinx-quickstart on Fri Dec 10 09:13:46 2010.
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-Welcome to Liren Liu's Notebook's documentation!
-================================================
+Welcome to Liren Liu's site!
+============================
 
 About Me:
-____
+------
 
 .. toctree::
    :maxdepth: 2
 
    me.rst
 
-Publications:
-____
-
-
 Scripts and codes:
-____
+---------
 
 .. toctree::
    :maxdepth: 2
 
-   scripts/gaussian.rst
    scripts/vasp.rst
-   scripts/supercluster.rst
+   scripts/super.rst
+   scripts/kmc.rst
+   scripts/ml.rst
+   scripts/python.rst
 
 Tutorials:
-____
+---------
 
 .. toctree::
+   tutorials/latex.rst
    tutorials/vim.rst
-   :caption: Contents:
+   tutorials/Restructured_Text.rst
 
+Links:
+------
 
+   **微尺度国家实验室**
+   `学术报告通知 <http://www.hfnl.ustc.edu.cn/hfnlnews/xsbg/>`_
+   `实验室动态 <http://www.hfnl.ustc.edu.cn/hfnlnews/sysdt/>`_
 
+   **化学与材料科学学院**
+   `学术报告通知 <http://scms.ustc.edu.cn/2403/list.htm>`_
+   `实验室动态 <http://scms.ustc.edu.cn/2404/list.htm>`_
 
+Galleries:
+----------
 
-Indices and tables
-==================
+.. toctree::
+   :maxdepth: 2
 
-* :ref:`genindex`
-* :ref:`modindex`
-* :ref:`search`
+   auto_examples/index.rst
+
+Supports:
+-------
+   
+   **This website is created using Sphinx**
+
+   `Here is a simple tutor of Sphinx <https://pythonhosted.org/an_example_pypi_project/sphinx.html>`_
