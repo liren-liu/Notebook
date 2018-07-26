@@ -37,13 +37,6 @@ Tutorials:
 Links:
 ------
 
-   **微尺度国家实验室**
-   `学术报告通知 <http://www.hfnl.ustc.edu.cn/hfnlnews/xsbg/>`_
-   `实验室动态 <http://www.hfnl.ustc.edu.cn/hfnlnews/sysdt/>`_
-
-   **化学与材料科学学院**
-   `学术报告通知 <http://scms.ustc.edu.cn/2403/list.htm>`_
-   `实验室动态 <http://scms.ustc.edu.cn/2404/list.htm>`_
 
 Galleries:
 ----------
