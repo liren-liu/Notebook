@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>&lt;no title&gt; &mdash; Liren Liu&#39;s Notebook 1.0 documentation</title>
+  <title>fix_atoms &mdash; Liren Liu&#39;s Notebook 1.0 documentation</title>
   
 
   
@@ -85,8 +85,24 @@
               <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../me.html"><strong>Liren Liu (刘立仁)</strong></a></li>
 </ul>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../vasp.html">Vasp</a></li>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../vasp.html">Vasp</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../vasp.html#useful-tools-on-web">Useful tools on web</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../vasp.html#scripts">Scripts</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="bash_cif2pos.html">cif2pos.sh</a></li>
+<li class="toctree-l3"><a class="reference internal" href="bash_converge.html">converg.sh</a></li>
+<li class="toctree-l3"><a class="reference internal" href="bash_get_vibration.html">get_vibration.sh</a></li>
+<li class="toctree-l3"><a class="reference internal" href="bash_plot_structure.html">plot_structure.sh</a></li>
+<li class="toctree-l3"><a class="reference internal" href="bash_plotdist.html">plotdist.sh</a></li>
+<li class="toctree-l3"><a class="reference internal" href="bash_python_plot_band.html">plot Band Structure</a></li>
+<li class="toctree-l3"><a class="reference internal" href="python_calculate_freq.html">calculate thermodymamics</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">fix_atoms</a></li>
+<li class="toctree-l3"><a class="reference internal" href="python_idpp_neb.html">Idpp method for creating initial NEB path</a></li>
+<li class="toctree-l3"><a class="reference internal" href="python_plot_dos_band.html">plot DOS &amp; Band Structure</a></li>
+</ul>
+</li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="../super.html">Scripts for job management system on super-computer</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../kmc.html">kMC simulation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../ml.html">Machine Learning tools</a></li>
@@ -143,7 +159,7 @@
         
           <li><a href="../vasp.html">Vasp</a> &raquo;</li>
         
-      <li>&lt;no title&gt;</li>
+      <li>fix_atoms</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -162,44 +178,46 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <p>#!/usr/bin/python
-#The script is written by liren,Email: <a class="reference external" href="mailto:llr&#37;&#52;&#48;mail&#46;ustc&#46;edu&#46;cn">llr<span>&#64;</span>mail<span>&#46;</span>ustc<span>&#46;</span>edu<span>&#46;</span>cn</a>
-import sys</p>
-<p>aname=sys.argv[1]
-bname=sys.argv[2]
-c=float(sys.argv[3])
-a=open(aname)
-b=open(bname,’w’)</p>
-<p>#line=a.readlines()
-title=a.readline()
-whatever=a.readline()
-latt1=a.readline()
-latt2=a.readline()
-latt3=a.readline()
-atom=a.readline()
-natom=a.readline()
-direct=a.readline()
-b.write(‘%sn’%title.strip())
-b.write(‘%sn’%whatever.strip())
-b.write(‘%sn’%latt1.strip())
-b.write(‘%sn’%latt2.strip())
-b.write(‘%sn’%latt3.strip())
-b.write(‘%sn’%atom.strip())
-b.write(‘%sn’%natom.strip())
-b.write(‘%sn’%’Selective dynamics’)
-b.write(‘%sn’%direct.strip())
-for line in a.readlines():</p>
-<blockquote>
-<div><p>num=line.split()
-if float(num[2])&lt;=c:</p>
-<blockquote>
-<div>b.write(‘%-16s%-16s%-16s%3s%3s%3sn’%(num[0],num[1],num[2],’F’,’F’,’F’))</div></blockquote>
-<dl class="docutils">
-<dt>else:</dt>
-<dd>b.write(‘%-16s%-16s%-16s%3s%3s%3sn’%(num[0],num[1],num[2],’T’,’T’,’T’))</dd>
-</dl>
-</div></blockquote>
-<p>b.close()</p>
+  <div class="section" id="fix-atoms">
+<h1>fix_atoms<a class="headerlink" href="#fix-atoms" title="Permalink to this headline">¶</a></h1>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/usr/bin/python</span>
+<span class="c1">#The script is written by liren,Email: llr@mail.ustc.edu.cn</span>
+<span class="kn">import</span> <span class="nn">sys</span>
+
+<span class="n">aname</span><span class="o">=</span><span class="n">sys</span><span class="o">.</span><span class="n">argv</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+<span class="n">bname</span><span class="o">=</span><span class="n">sys</span><span class="o">.</span><span class="n">argv</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span>
+<span class="n">c</span><span class="o">=</span><span class="nb">float</span><span class="p">(</span><span class="n">sys</span><span class="o">.</span><span class="n">argv</span><span class="p">[</span><span class="mi">3</span><span class="p">])</span>
+<span class="n">a</span><span class="o">=</span><span class="nb">open</span><span class="p">(</span><span class="n">aname</span><span class="p">)</span>
+<span class="n">b</span><span class="o">=</span><span class="nb">open</span><span class="p">(</span><span class="n">bname</span><span class="p">,</span><span class="s1">&#39;w&#39;</span><span class="p">)</span>
+
+<span class="c1">#line=a.readlines()</span>
+<span class="n">title</span><span class="o">=</span><span class="n">a</span><span class="o">.</span><span class="n">readline</span><span class="p">()</span>
+<span class="n">whatever</span><span class="o">=</span><span class="n">a</span><span class="o">.</span><span class="n">readline</span><span class="p">()</span>
+<span class="n">latt1</span><span class="o">=</span><span class="n">a</span><span class="o">.</span><span class="n">readline</span><span class="p">()</span>
+<span class="n">latt2</span><span class="o">=</span><span class="n">a</span><span class="o">.</span><span class="n">readline</span><span class="p">()</span>
+<span class="n">latt3</span><span class="o">=</span><span class="n">a</span><span class="o">.</span><span class="n">readline</span><span class="p">()</span>
+<span class="n">atom</span><span class="o">=</span><span class="n">a</span><span class="o">.</span><span class="n">readline</span><span class="p">()</span>
+<span class="n">natom</span><span class="o">=</span><span class="n">a</span><span class="o">.</span><span class="n">readline</span><span class="p">()</span>
+<span class="n">direct</span><span class="o">=</span><span class="n">a</span><span class="o">.</span><span class="n">readline</span><span class="p">()</span>
+<span class="n">b</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">%s</span><span class="se">\n</span><span class="s1">&#39;</span><span class="o">%</span><span class="n">title</span><span class="o">.</span><span class="n">strip</span><span class="p">())</span>
+<span class="n">b</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">%s</span><span class="se">\n</span><span class="s1">&#39;</span><span class="o">%</span><span class="n">whatever</span><span class="o">.</span><span class="n">strip</span><span class="p">())</span>
+<span class="n">b</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">%s</span><span class="se">\n</span><span class="s1">&#39;</span><span class="o">%</span><span class="n">latt1</span><span class="o">.</span><span class="n">strip</span><span class="p">())</span>
+<span class="n">b</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">%s</span><span class="se">\n</span><span class="s1">&#39;</span><span class="o">%</span><span class="n">latt2</span><span class="o">.</span><span class="n">strip</span><span class="p">())</span>
+<span class="n">b</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">%s</span><span class="se">\n</span><span class="s1">&#39;</span><span class="o">%</span><span class="n">latt3</span><span class="o">.</span><span class="n">strip</span><span class="p">())</span>
+<span class="n">b</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">%s</span><span class="se">\n</span><span class="s1">&#39;</span><span class="o">%</span><span class="n">atom</span><span class="o">.</span><span class="n">strip</span><span class="p">())</span>
+<span class="n">b</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">%s</span><span class="se">\n</span><span class="s1">&#39;</span><span class="o">%</span><span class="n">natom</span><span class="o">.</span><span class="n">strip</span><span class="p">())</span>
+<span class="n">b</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">%s</span><span class="se">\n</span><span class="s1">&#39;</span><span class="o">%</span><span class="s1">&#39;Selective dynamics&#39;</span><span class="p">)</span>
+<span class="n">b</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">%s</span><span class="se">\n</span><span class="s1">&#39;</span><span class="o">%</span><span class="n">direct</span><span class="o">.</span><span class="n">strip</span><span class="p">())</span>
+<span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">a</span><span class="o">.</span><span class="n">readlines</span><span class="p">():</span>
+         <span class="n">num</span><span class="o">=</span><span class="n">line</span><span class="o">.</span><span class="n">split</span><span class="p">()</span>
+         <span class="k">if</span> <span class="nb">float</span><span class="p">(</span><span class="n">num</span><span class="p">[</span><span class="mi">2</span><span class="p">])</span><span class="o">&lt;=</span><span class="n">c</span><span class="p">:</span>
+             <span class="n">b</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">%-16s%-16s%-16s%3s%3s%3s</span><span class="se">\n</span><span class="s1">&#39;</span><span class="o">%</span><span class="p">(</span><span class="n">num</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span><span class="n">num</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span><span class="n">num</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span><span class="s1">&#39;F&#39;</span><span class="p">,</span><span class="s1">&#39;F&#39;</span><span class="p">,</span><span class="s1">&#39;F&#39;</span><span class="p">))</span>
+         <span class="k">else</span><span class="p">:</span>
+             <span class="n">b</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">%-16s%-16s%-16s%3s%3s%3s</span><span class="se">\n</span><span class="s1">&#39;</span><span class="o">%</span><span class="p">(</span><span class="n">num</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span><span class="n">num</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span><span class="n">num</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span><span class="s1">&#39;T&#39;</span><span class="p">,</span><span class="s1">&#39;T&#39;</span><span class="p">,</span><span class="s1">&#39;T&#39;</span><span class="p">))</span>
+<span class="n">b</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
 
 
            </div>
