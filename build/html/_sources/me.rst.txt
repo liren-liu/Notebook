@@ -10,7 +10,7 @@
 Publications
 =========
 
-	`Google Scholar <http://www.researchgate.net/profile/lin_liu2>`_
+	`Google Scholar <https://www.researchgate.net/profile/Liren_Liu2>`_
 
 
 .. figure::  _static/llr.jpg
