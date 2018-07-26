@@ -8,7 +8,7 @@ This page contains scripts for vasp post treatment.
 Useful tools on web
 -------------------
 - `VTST (Transition State Tools for VASP) <http://theory.cm.utexas.edu/vtsttools/>`_
-      It is also recommended to refer to my blog for `NEB calculation <http://blog.sina.com.cn/s/blog_b364ab230102vghk.html>`_.
+      It is recommended to refer to lipai's blog for `NEB calculation <http://blog.sina.com.cn/s/blog_b364ab230102vghk.html>`_.
 - `VTSTscripts <http://theory.cm.utexas.edu/vtsttools/scripts.html>`_
 - `VASPKIT <http://vaspkit.sourceforge.net>`_
 - `p4vasp <http://www.p4vasp.at/>`_
@@ -23,12 +23,12 @@ Scripts
    vasp_scripts/bash_cif2pos.rst
    vasp_scripts/bash_converge.rst
    vasp_scripts/bash_dist.py
-   vasp_scripts/bash_fix_atom.rst
    vasp_scripts/bash_get_vibration.rst
    vasp_scripts/bash_plot_structure.rst
    vasp_scripts/bash_plotdist.rst
    vasp_scripts/bash_python_plot_band.rst
    vasp_scripts/python_calculate_freq.rst
+   vasp_scripts/python_fix_atom.rst
    vasp_scripts/python_idpp_neb.rst
    vasp_scripts/python_plot_dos_band.rst
    vasp_scripts/warning_gnuplot.rst

@@ -1,7 +1,7 @@
 Framework of my kMC
 ===========
 
-This is a framework of my kMC code
+This is a framework of lipai's kMC code
 
 ::
 
