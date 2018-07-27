@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>kMC simulation &mdash; Liren Liu&#39;s Notebook 1.0 documentation</title>
+  <title>断网自动重连 &mdash; Liren Liu&#39;s Notebook 1.0 documentation</title>
   
 
   
@@ -28,8 +28,8 @@
   <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Framework of my kMC" href="kmc_scripts/framework.html" />
-    <link rel="prev" title="Scripts for job management system on super-computer" href="super.html" /> 
+    <link rel="next" title="Math notation in Latex" href="../tutorials/latex.html" />
+    <link rel="prev" title="Plot plain figures" href="../scripts/python_scripts/python_plot.html" /> 
 
   
   <script src="../_static/js/modernizr.min.js"></script>
@@ -85,22 +85,15 @@
               <ul>
 <li class="toctree-l1"><a class="reference internal" href="../me.html"><strong>Liren Liu (刘立仁)</strong></a></li>
 </ul>
-<ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="vasp.html">Vasp</a></li>
-<li class="toctree-l1"><a class="reference internal" href="super.html">Scripts for job management system on super-computer</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">kMC simulation</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#useful-tools-on-web-for-free">Useful tools on web for free</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#scripts">Scripts</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="kmc_scripts/framework.html">Framework of my kMC</a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="ml.html">Machine Learning tools</a></li>
-<li class="toctree-l1"><a class="reference internal" href="python.html">Python Scripts</a></li>
-</ul>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../docs/intnet.html">断网自动重连</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../scripts/vasp.html">Vasp</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../scripts/super.html">Scripts for job management system on super-computer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../scripts/kmc.html">kMC simulation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../scripts/ml.html">Machine Learning tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../scripts/python.html">Python Scripts</a></li>
+</ul>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">断网自动重连</a></li>
 </ul>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../tutorials/latex.html">Math notation in Latex</a></li>
@@ -151,13 +144,13 @@
     
       <li><a href="../index.html">Docs</a> &raquo;</li>
         
-      <li>kMC simulation</li>
+      <li>断网自动重连</li>
     
     
       <li class="wy-breadcrumbs-aside">
         
             
-            <a href="../_sources/scripts/kmc.rst.txt" rel="nofollow"> View page source</a>
+            <a href="../_sources/docs/intnet.rst.txt" rel="nofollow"> View page source</a>
           
         
       </li>
@@ -170,22 +163,15 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="kmc-simulation">
-<h1>kMC simulation<a class="headerlink" href="#kmc-simulation" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="useful-tools-on-web-for-free">
-<h2>Useful tools on web for free<a class="headerlink" href="#useful-tools-on-web-for-free" title="Permalink to this headline">¶</a></h2>
-<ul class="simple">
-<li><a class="reference external" href="http://zacros.org/">ZACROS</a></li>
-</ul>
-</div>
-<div class="section" id="scripts">
-<h2>Scripts<a class="headerlink" href="#scripts" title="Permalink to this headline">¶</a></h2>
-<div class="toctree-wrapper compound">
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="kmc_scripts/framework.html">Framework of my kMC</a></li>
-</ul>
-</div>
-</div>
+  <div class="section" id="id1">
+<h1>断网自动重连<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
+<p>1.右键我的电脑—管理
+2.系统工具–任务计划程序–创建基本任务向导
+3.名称：断网链接；描述：断网重连；点下一步
+4.触发器：选“当特定事件被记录时”；下一步
+5.日志：系统；源：rasman；事件：20268；下一步
+6.直接下一步
+7.程序或脚本：rasdial 宽带连接 用户名 密码</p>
 </div>
 
 
@@ -196,10 +182,10 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="kmc_scripts/framework.html" class="btn btn-neutral float-right" title="Framework of my kMC" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="../tutorials/latex.html" class="btn btn-neutral float-right" title="Math notation in Latex" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="super.html" class="btn btn-neutral" title="Scripts for job management system on super-computer" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="../scripts/python_scripts/python_plot.html" class="btn btn-neutral" title="Plot plain figures" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

@@ -26,6 +26,14 @@ Scripts and codes:
    scripts/ml.rst
    scripts/python.rst
 
+Windows:
+---------
+
+.. toctree::
+   :maxdepth:2
+
+   docs/intnet.rst
+
 Tutorials:
 ---------
 
