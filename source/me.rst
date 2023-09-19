@@ -8,15 +8,15 @@
 
     Education and work experience:
 
-    2017.7-- ,Nanjing University of Aeronautics and Astronautics, Postdoctal (Zhuhua Zhang)
+    2017.7-- ,Nanjing University of Aeronautics and Astronautics, Postdoctal
 
-    2013.9-2017.7, University of Science and Technology of China,Doctor (Jinlong Yang) 
+    2013.9-2017.7, University of Science and Technology of China,Doctor
 
     Email: llr@mail.ustc.edu.cn; lrliu@nuaa.edu.cn  
 
 Publications
 =========
- 1.Yongmin He,Liren Liu#,Chao Zhu,Prafful Golani,Pengyi Tang, Caitian Gao, Iordi Arbiol,Qijie Wang,Zhuhua Zhang*,Zheng Liu*. Reproducibility of atom-thin catalyst in layered platinum sulfide,Science,submitting.2019
+ 1.Yongmin He,Liren Liu#,Chao Zhu,Prafful Golani,Pengyi Tang, Caitian Gao, Iordi Arbiol,Qijie Wang,Zhuhua Zhang*,Zheng Liu*. Reproducibility of atom-thin catalyst in layered platinum sulfide,Nature Catalysis 5 (3), 212-221.2022
 
  2.Liren Liu,Zhuhua Zhang*,Xiolong Liu,Xiaoyu Xuan,Mark C.Hersam*,Boris I.Yakobson and Wanlin Guo*.Borophene concentric superlattices via self-assembly of twin boundaries.Nat. Comm., submitting.2019
 
