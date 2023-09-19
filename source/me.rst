@@ -8,11 +8,13 @@
 
     Education and work experience:
 
+    2020.9--, Nanjing Tech University
+
     2017.7-- ,Nanjing University of Aeronautics and Astronautics, Postdoctal
 
     2013.9-2017.7, University of Science and Technology of China,Doctor
 
-    Email: llr@mail.ustc.edu.cn; lrliu@nuaa.edu.cn  
+    Email: lrliu@njtech.edu.cn; 
 
 Publications
 =========
